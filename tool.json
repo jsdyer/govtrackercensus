@@ -16,7 +16,7 @@
   "access": "browser",
   "data_info": {
     "mode": "snapshot",
-    "detail": "A fixed set of 15 federal, British Columbia and Nova Scotia homepages is visited in a fresh Chromium context, with no consent choices, login or other interaction. Robots restrictions and navigation failures remain explicit. This is a homepage sample, not a census of every government website.",
+    "detail": "Weekly passive browser observations of 15 federal, BC and Nova Scotia homepages.",
     "cadence": "Weekly"
   }
 }
