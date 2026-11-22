@@ -1,7 +1,3 @@
-// Keep transformations separate from the DOM so they can be tested directly.
-export function cleanLines(text) {
-  if (typeof text !== 'string') throw new TypeError('Expected text');
-  const lines = text.split(/\r\n|\r|\n/).map(line => line.trim()).filter(Boolean);
-  const unique = [...new Set(lines)];
-  return { text: unique.join('\n'), count: unique.length, removed: lines.length - unique.length };
-}
+import {counts,sum} from './shared.mjs';
+export const present=rows=>rows;
+export function analyse(rows){const ok=rows.filter(r=>r.status==='ok');return{metrics:[{label:'Homepages in selection',value:rows.length,note:'Curated sample'},{label:'Successful scans',value:ok.length,note:'Failures excluded from counts'},{label:'Different registrable domains',value:new Set(ok.flatMap(r=>r.third_party_domains)).size,note:'Not proof of tracking'},{label:'Known analytics contacts',value:sum(ok,'analytics_requests'),note:'Documented service signatures'}],panels:[{title:'Other domains contacted by homepage',items:ok.map(r=>({label:r.title,value:r.third_party_count})).sort((a,b)=>b.value-a.value),note:'A domain count is not a privacy score.'},{title:'Observed documented service signatures',items:counts(ok,'services'),note:'Counts are homepages contacting the service; tag delivery remains distinct from analytics.'}]};}

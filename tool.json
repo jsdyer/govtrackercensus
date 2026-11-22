@@ -1,16 +1,22 @@
 {
-  "id": "coolcode-tool-template",
-  "title": "CoolCode Tool Starter",
-  "description": "A browser-only example that trims lines and removes exact duplicates.",
+  "id": "govtrackercensus",
+  "title": "Gov Tracker Census",
+  "description": "Who else does a government homepage contact? Compare observed requests, scripts and cookies across a fixed public website sample.",
   "category": "security",
-  "tags": ["text", "lines", "duplicates"],
-  "icon": "scan-search",
-  "url": "/coolcode-tool-template/",
-  "source": "https://github.com/jsdyer/coolcode-tool-template",
+  "tags": [
+    "govtrackercensus",
+    "security",
+    "public data",
+    "history"
+  ],
+  "icon": "history",
+  "url": "/govtrackercensus/",
+  "source": "https://github.com/jsdyer/govtrackercensus",
   "hosting": "project",
   "access": "browser",
   "data_info": {
-    "mode": "local",
-    "detail": "The browser reads the text you paste and compares its lines."
+    "mode": "snapshot",
+    "detail": "A fixed set of 15 federal, British Columbia and Nova Scotia homepages is visited in a fresh Chromium context, with no consent choices, login or other interaction. Robots restrictions and navigation failures remain explicit. This is a homepage sample, not a census of every government website.",
+    "cadence": "Weekly"
   }
 }

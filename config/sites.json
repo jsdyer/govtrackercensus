@@ -1,0 +1,17 @@
+[
+  {"id":"canada","title":"Canada.ca","jurisdiction":"Federal","url":"https://www.canada.ca/en.html"},
+  {"id":"statistics-canada","title":"Statistics Canada","jurisdiction":"Federal","url":"https://www.statcan.gc.ca/en/start"},
+  {"id":"bank-of-canada","title":"Bank of Canada","jurisdiction":"Federal","url":"https://www.bankofcanada.ca/"},
+  {"id":"privacy-commissioner","title":"Privacy Commissioner","jurisdiction":"Federal","url":"https://www.priv.gc.ca/en/"},
+  {"id":"information-commissioner","title":"Information Commissioner","jurisdiction":"Federal","url":"https://www.oic-ci.gc.ca/en"},
+  {"id":"border-services","title":"Canada Border Services Agency","jurisdiction":"Federal","url":"https://www.canada.ca/en/border-services-agency.html"},
+  {"id":"bc-government","title":"British Columbia government","jurisdiction":"British Columbia","url":"https://www2.gov.bc.ca/gov/content/home"},
+  {"id":"bc-laws","title":"BC Laws","jurisdiction":"British Columbia","url":"https://www.bclaws.gov.bc.ca/"},
+  {"id":"bc-parks","title":"BC Parks","jurisdiction":"British Columbia","url":"https://bcparks.ca/"},
+  {"id":"healthlink-bc","title":"HealthLink BC","jurisdiction":"British Columbia","url":"https://www.healthlinkbc.ca/"},
+  {"id":"ns-government","title":"Nova Scotia government","jurisdiction":"Nova Scotia","url":"https://www.novascotia.ca/"},
+  {"id":"ns-legislature","title":"Nova Scotia Legislature","jurisdiction":"Nova Scotia","url":"https://nslegislature.ca/"},
+  {"id":"ns-news","title":"Nova Scotia government news","jurisdiction":"Nova Scotia","url":"https://news.novascotia.ca/"},
+  {"id":"ns-archives","title":"Nova Scotia Archives","jurisdiction":"Nova Scotia","url":"https://archives.novascotia.ca/"},
+  {"id":"ns-museum","title":"Nova Scotia Museum","jurisdiction":"Nova Scotia","url":"https://museum.novascotia.ca/"}
+]
