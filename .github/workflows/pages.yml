@@ -28,15 +28,22 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
+      - name: Check Python entry points before collection
+        run: python3 -m compileall -q scripts
       - name: Install source parsers
         run: python3 -m pip install -r requirements.txt
       - name: Select collection mode
         id: mode
         env:
           EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
         run: |
           collect=false
           if [ "$EVENT" != pull_request ] && { [ "$EVENT" = schedule ] || [ "$EVENT" = workflow_dispatch ] || [ ! -f data/current.json ]; }; then collect=true; fi
+          if [ "$EVENT" = push ] && git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            if ! git diff --quiet "$BEFORE" "$AFTER" -- scripts/collect.py scripts/source.py scripts/common.py config requirements.txt; then collect=true; fi
+          fi
           echo "collect=$collect" >> "$GITHUB_OUTPUT"
       - name: Install census browser
         if: steps.mode.outputs.collect == 'true'

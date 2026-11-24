@@ -20,7 +20,7 @@ The diary compares subsequent captures. Initial capture is a baseline. A failed 
 
 ## Collection and archive
 
-Schedule: **Weekly** (`17 9 * * 2`, UTC). GitHub schedules are best effort. Scheduled and manual runs collect, validate, commit dated snapshots and deploy. A first code push also collects if no saved dataset exists. Other code pushes rebuild the saved dataset offline.
+Schedule: **Weekly** (`17 9 * * 2`, UTC). GitHub schedules are best effort. Scheduled and manual runs collect, validate, commit dated snapshots and deploy. A first code push also collects if no saved dataset exists; pushes changing the collector, source configuration or source dependencies collect again to verify the change. Other code pushes rebuild the saved dataset offline. Every build checks the syntax of all Python entry points, including collector code that an offline build would otherwise skip.
 
 `data/current.json` contains the latest normalized source records and metadata. `archive/YYYY-MM/*.json.gz` retains distinct captured versions; `data/history.json` lists them. Identical data checks update the check time without manufacturing a change. An initial capture is labelled baseline. Archive data is tracked in Git and does not expire with Actions artifacts. The site has snapshot selection, filtering, source detail, CSV export and an RSS change feed.
 
